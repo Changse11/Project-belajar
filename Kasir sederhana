@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+int main (){
+    int pilihan,jumlah,uang,kembali,kopi = 0,teh = 0,soda = 0,airmineral = 0;
+    double total = 0.0;
+    const int hargakopi = 20000;
+    const int hargateh = 15000;
+    const int hargasoda = 10000;
+    const int hargaairmineral = 5000;
+    bool lanjut = true;
+
+    while (lanjut){
+        cout<<"    Daftar Menu   \n";
+    cout<<"1. Kopi        - Rp 20.000\n";
+    cout<<"2. Teh         - Rp 15.000\n";
+    cout<<"3. Soda        - Rp 10.000\n";
+    cout<<"4. Air Mineral - Rp 5.000\n";
+    cout<<"5. Keluar\n";
+        cout << "Pilih produk (1-5) : ";
+        cin >> pilihan;
+    
+        switch (pilihan)
+        {
+        case 1:
+            cout<<"Masukan jumlah barang : ";
+            cin>> kopi;
+            total += hargakopi * kopi;
+            cout<<"Total belanja sementara : "<<total<<endl;
+            break;
+        case 2:
+            cout<<"Masukan jumlah barang : ";
+            cin>> teh;
+            total += hargateh * teh;
+            cout<<"Total belanja sementara : "<<total<<endl;
+            break;
+        case 3:
+            cout<<"Masukan jumlah barang : ";
+            cin>> soda;
+            total += hargasoda * soda;
+            cout<<"Total belanja sementara : "<<total<<endl;
+            break;
+        case 4:
+            cout<<"Masukan jumlah barang : ";
+            cin>> airmineral;
+            total += hargaairmineral * airmineral;
+            cout<<"Total belanja sementara : "<<total<<endl;
+            break;
+        case 5:
+            lanjut = false;
+            break;
+        default:
+            cout<<"Pilihan tidak valid. silahkan coba lagi \n";
+            break;
+        }
+    }
+    cout<<"Masukan Nominal Uang : ";
+        cin>> uang;
+
+        kembali = uang - total;
+        jumlah = kopi + teh + soda + airmineral ;
+
+        cout<<"Rincian belanja anda : \n";
+        cout<<"Kopi : "<<kopi<<endl;
+        cout<<"Teh  : "<<teh<<endl;
+        cout<<"Soda : "<<soda<<endl;
+        cout<<"Air mineral : "<<airmineral<<endl;
+        
+        cout<<"Total barang belanjaan anda ada : "<<jumlah<<" barang"<<endl;
+        cout<<"Total belanja anda : Rp "<<total<<endl;
+        cout<<"Uang : Rp "<<uang<<endl;
+        cout<<"Kembali : Rp "<<kembali;
+
+        return 0;
+}
